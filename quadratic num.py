@@ -1,0 +1,7 @@
+a = float(input('enter the value of a: '))
+b = float(input('enter the value of b: '))
+c = float(input('enter the value of c: '))
+d = (b*b) - (4*a*c)
+x1 = (-b - (d ** 0.5))/(2*a)
+x2 = (-b + (d ** 0.5))/(2*a)
+print(x1,x2)
