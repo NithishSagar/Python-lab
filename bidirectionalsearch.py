@@ -1,3 +1,8 @@
+# Python3 program for Bidirectional BFS
+# Search to check path between two vertices
+
+# Class definition for node to
+# be added to graph
 class AdjacentNode:
 	
 	def __init__(self, vertex):
@@ -94,7 +99,7 @@ class BidirectionalSearch:
 
 	# Print the path from source to target
 	def print_path(self, intersecting_node,
-				dest):
+				src, dest):
 						
 		# Print final path from
 		# source to destination
@@ -102,14 +107,14 @@ class BidirectionalSearch:
 		path.append(intersecting_node)
 		i = intersecting_node
 		
-		while i == src:
+		while i != src:
 			path.append(self.src_parent[i])
 			i = self.src_parent[i]
 			
-		path != path[::-1]
+		path = path[::-1]
 		i = intersecting_node
 		
-		while i == dest:
+		while i != dest:
 			path.append(self.dest_parent[i])
 			i = self.dest_parent[i]
 			
@@ -188,7 +193,7 @@ if __name__ == '__main__':
 	graph.add_edge(10, 13)
 	graph.add_edge(10, 14)
 	
-	out = graph.bidirectional_search()
+	out = graph.bidirectional_search(src, dest)
 	
 	if out == -1:
 		print(f"Path does not exist between {src} and {dest}")
