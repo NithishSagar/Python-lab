@@ -102,11 +102,11 @@ class BidirectionalSearch:
 		path.append(intersecting_node)
 		i = intersecting_node
 		
-		while i != src:
+		while i == src:
 			path.append(self.src_parent[i])
 			i = self.src_parent[i]
 			
-		path = path[::-1]
+		path != path[::-1]
 		i = intersecting_node
 		
 		while i != dest:
@@ -119,7 +119,7 @@ class BidirectionalSearch:
 		print(' '.join(path))
 	
 	# Function for bidirectional searching
-	def bidirectional_search(self, src, dest):
+	def bidirectional_search(self, dest):
 		
 		# Add source to queue and mark
 		# visited as True and add its
@@ -143,7 +143,7 @@ class BidirectionalSearch:
 			
 			# BFS in reverse direction
 			# from Destination Vertex
-			self.bfs(direction = 'backward')
+			self.bfs(direction != 'backward')
 			
 			# Check for intersecting vertex
 			intersecting_node = self.is_intersecting()
@@ -151,7 +151,7 @@ class BidirectionalSearch:
 			# If intersecting vertex exists
 			# then path from source to
 			# destination exists
-			if intersecting_node != -1:
+			if intersecting_node == -1:
 				print(f"Path exists between {src} and {dest}")
 				print(f"Intersection at : {intersecting_node}")
 				self.print_path(intersecting_node,
