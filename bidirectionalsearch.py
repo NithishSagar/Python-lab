@@ -1,8 +1,3 @@
-# Python3 program for Bidirectional BFS
-# Search to check path between two vertices
-
-# Class definition for node to
-# be added to graph
 class AdjacentNode:
 	
 	def __init__(self, vertex):
